@@ -1,14 +1,20 @@
 .container{
     display: flex;
 }
+header{
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+#start_game{
+    margin-right: 10px;
 
+}
 .user_grid{
     display:flex;
     flex-wrap: wrap;
     width: 420px;
     height: 420px;
-   
-    background-color: aqua;
    
 }
 .grid div{
@@ -24,26 +30,23 @@
     width: 420px;
     height: 420px;
     margin-top: 0;
-    background-color:lightgreen;
 }
-.grid-display{
-    width: 420px;
-    height: 420px;
-    border:solid 1px grey;
-    background-color:lightskyblue;
+.grid_display{
+    width: 200px;
+    height: 200px;
     margin: 20px;
 }
-.destroy-container{
+.boat_container{
     width: 80px;
     height: 40px;
     background-color: mediumaquamarine;
     border:solid 1px grey;
     display: flex;
 }
-.destroy{
+.boat{
     background-color: mediumaquamarine;
 }
-.destroy-container-vert{
+.boat_container_vert{
     width: 40px;
     height: 80px;
     background-color: mediumaquamarine;
@@ -51,7 +54,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.submarine-container{
+.submarine_container{
     width: 120px;
     height: 40px;
     background-color: rgb(193, 102, 205);
@@ -61,7 +64,7 @@
 .submarine{
     background-color: rgb(193, 102, 205);
 }
-.submarine-container-vert{
+.submarine_container_vert{
     width: 40px;
     height: 120px;
     background-color: rgb(193, 102, 205);
@@ -69,7 +72,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.cruiser-container{
+.cruiser_container{
     width: 120px;
     height: 40px;
     background-color: rgb(166, 205, 102);
@@ -79,7 +82,7 @@
 .cruiser{
     background-color: rgb(166, 205, 102);
 }
-.cruiser-container-vert{
+.cruiser_container_vert{
     width: 40px;
     height: 120px;
     background-color: rgb(166, 205, 102);
@@ -87,7 +90,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.battleship-container{
+.battleship_container{
     width: 160px;
     height: 40px;
     background-color: rgb(234, 238, 27);
@@ -95,7 +98,7 @@
     display: flex;
 
 }
-.battleship-container-vert{
+.battleship_container_vert{
     width: 40px;
     height: 160px;
     background-color: rgb(234, 238, 27);
@@ -114,7 +117,7 @@
     height: 40px;
     border:solid 1px grey;
 }
-.twoDeckShip{
+/* .twoDeckShip{
     background-color: mediumaquamarine;
 }
 .firstThreeDeckShip{
@@ -125,7 +128,7 @@
 }
 .fourDeckShip{
     background-color: rgb(234, 238, 27);
-}
+} */
 .red{
     background-color: red;
 }

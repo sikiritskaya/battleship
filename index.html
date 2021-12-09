@@ -8,36 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="player"></div>
-   <!--  <div class="your_goals">Your goals: 0</div>
-    <div class="comp_goals">Computer goals: 0</div> -->
-
+    <header>
+        <button id="start_game">Start</button>
+        <div class="player"></div>
+    </header>
+    
     <div class="container">
         <div class="grid user_grid"></div> 
         <div class="grid comp_grid"></div>
     </div>
     <div class="info">
-        <button id="start_game">start</button>
+        
         <button id="rotate">rotate</button>
         <div class="information"></div>
     </div>
 
-    <div class="grid-display">
-        <div class="ship destroy-container" draggable="true">
-            <div id="destroy1"></div>
-            <div id="destroy2"></div>
+    <div class="grid_display">
+        <div class="ship boat_container" draggable="true">
+            <div id="boat1"></div>
+            <div id="boat2"></div>
         </div>
-        <div class="ship submarine-container" draggable="true">
+        <div class="ship submarine_container" draggable="true">
             <div id="submarine1"></div>
             <div id="submarine2"></div>
             <div id="submarine3"></div>
         </div>
-        <div class="ship cruiser-container" draggable="true">
+        <div class="ship cruiser_container" draggable="true">
             <div id="cruiser1"></div>
             <div id="cruiser2"></div>
             <div id="cruiser3"></div>
         </div>
-        <div class="ship battleship-container" draggable="true">
+        <div class="ship battleship_container" draggable="true">
             <div id="battleship1"></div>
             <div id="battleship2"></div>
             <div id="battleship3"></div>

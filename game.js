@@ -5,6 +5,7 @@ const playerText = document.querySelector('.player')
 const userGoals = document.querySelector('.your_goals')
 const compGoals = document.querySelector('.comp_goals')
 const info = document.querySelector('.information')
+let currentFlag = 0
 /* let userCounter = 0
 let compCounter = 0
 userGoals.textContent = userCounter
@@ -21,10 +22,14 @@ const game = () => {
                 showSquare(square)
             })
         })
+        currentFlag = 1
     }
     if(currentPlayer==='computer'){
         playerText.textContent = "computer's turn"
-        setTimeout(compPlay, 1000)
+        if(currentFlag){
+            setTimeout(compPlay, 1000)
+            currentFlag = 0
+        }
     }
 }
 
@@ -63,7 +68,7 @@ function compPlay(){
     }) */
     console.log(shot)
     if(!userSquares[shot].classList.contains('red') && !userSquares[shot].classList.contains('black')){
-        if(userSquares[shot].classList.contains('destroy')) compTwoDeckShip++
+        if(userSquares[shot].classList.contains('boat')) compTwoDeckShip++
         if(userSquares[shot].classList.contains('submarine')) compFirstThreeDeckShip++
         if(userSquares[shot].classList.contains('cruiser')) compSecondThreeDeckShip++
         if(userSquares[shot].classList.contains('battleship')) compFourDeckShip++
@@ -111,14 +116,17 @@ function isWinner() {
         compFourDeckShip = 10
     }
     if(fourDeckShip + secondThreeDeckShip + firstThreeDeckShip + twoDeckShip === 40){
-        info.textContent='Congrats! You win'
+        playerText.textContent='Congrats! You win'
+        end()
     }
     if(compFourDeckShip + compSecondThreeDeckShip + compFirstThreeDeckShip + compTwoDeckShip === 40){
-        info.textContent='You loose'
+        playerText.textContent="You've lost"
+        end()
     }
     
 }
 startButton.addEventListener('click', game)
 function end() {
     gameOver = true
+    startButton.removeEventListener('click', game)
 }

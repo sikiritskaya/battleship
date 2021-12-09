@@ -1,11 +1,11 @@
 const userField = document.querySelector('.user_grid')
 const compField = document.querySelector('.comp_grid')
-const shipContainer = document.querySelector('.grid-display')
+const shipContainer = document.querySelector('.grid_display')
 const ships = document.querySelectorAll('.ship')
-const destroy = document.querySelector('.destroy-container')
-const submarine = document.querySelector('.submarine-container')
-const cruiser = document.querySelector('.cruiser-container')
-const battleship = document.querySelector('.battleship-container')
+const boat = document.querySelector('.boat_container')
+const submarine = document.querySelector('.submarine_container')
+const cruiser = document.querySelector('.cruiser_container')
+const battleship = document.querySelector('.battleship_container')
 const rotateButton = document.querySelector('#rotate')
 const width = 10
 const userSquares = []
@@ -69,20 +69,20 @@ generate(shipsArray[3])
 
 const rotate = () =>{
     if(isHorizontal){
-        destroy.classList.toggle('destroy-container-vert')
-        submarine.classList.toggle('submarine-container-vert')
-        cruiser.classList.toggle('cruiser-container-vert')
-        battleship.classList.toggle('battleship-container-vert')
+        boat.classList.toggle('boat_container_vert')
+        submarine.classList.toggle('submarine_container_vert')
+        cruiser.classList.toggle('cruiser_container_vert')
+        battleship.classList.toggle('battleship_container_vert')
         shipContainer.style.display = 'flex'
         isHorizontal = false
         console.log(isHorizontal)
         return
     }
     if(!isHorizontal){
-        destroy.classList.toggle('destroy-container-vert')
-        submarine.classList.toggle('submarine-container-vert')
-        cruiser.classList.toggle('cruiser-container-vert')
-        battleship.classList.toggle('battleship-container-vert')
+        boat.classList.toggle('boat_container_vert')
+        submarine.classList.toggle('submarine_container_vert')
+        cruiser.classList.toggle('cruiser_container_vert')
+        battleship.classList.toggle('battleship_container_vert')
         shipContainer.style.display = 'block'
         isHorizontal = true
         console.log(isHorizontal)
