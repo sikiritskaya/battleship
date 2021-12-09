@@ -1,0 +1,134 @@
+.container{
+    display: flex;
+}
+
+.user_grid{
+    display:flex;
+    flex-wrap: wrap;
+    width: 420px;
+    height: 420px;
+   
+    background-color: aqua;
+   
+}
+.grid div{
+    width: 40px;
+    height: 40px;
+    border:solid 1px grey;
+   
+}
+.comp_grid{
+    margin: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    width: 420px;
+    height: 420px;
+    margin-top: 0;
+    background-color:lightgreen;
+}
+.grid-display{
+    width: 420px;
+    height: 420px;
+    border:solid 1px grey;
+    background-color:lightskyblue;
+    margin: 20px;
+}
+.destroy-container{
+    width: 80px;
+    height: 40px;
+    background-color: mediumaquamarine;
+    border:solid 1px grey;
+    display: flex;
+}
+.destroy{
+    background-color: mediumaquamarine;
+}
+.destroy-container-vert{
+    width: 40px;
+    height: 80px;
+    background-color: mediumaquamarine;
+    border:solid 1px grey;
+    display: flex;
+    flex-wrap: wrap;
+}
+.submarine-container{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(193, 102, 205);
+    border:solid 1px grey;
+    display: flex;
+}
+.submarine{
+    background-color: rgb(193, 102, 205);
+}
+.submarine-container-vert{
+    width: 40px;
+    height: 120px;
+    background-color: rgb(193, 102, 205);
+    border:solid 1px grey;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cruiser-container{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(166, 205, 102);
+    border:solid 1px grey;
+    display: flex;
+}
+.cruiser{
+    background-color: rgb(166, 205, 102);
+}
+.cruiser-container-vert{
+    width: 40px;
+    height: 120px;
+    background-color: rgb(166, 205, 102);
+    border:solid 1px grey;
+    display: flex;
+    flex-wrap: wrap;
+}
+.battleship-container{
+    width: 160px;
+    height: 40px;
+    background-color: rgb(234, 238, 27);
+    border:solid 1px grey;
+    display: flex;
+
+}
+.battleship-container-vert{
+    width: 40px;
+    height: 160px;
+    background-color: rgb(234, 238, 27);
+    border:solid 1px grey;
+    display: flex;
+    flex-wrap: wrap;
+}
+.battleship{
+    background-color: rgb(234, 238, 27);
+}
+.ship{
+    margin: 2px;
+}
+.ship div{
+    width: 40px;
+    height: 40px;
+    border:solid 1px grey;
+}
+.twoDeckShip{
+    background-color: mediumaquamarine;
+}
+.firstThreeDeckShip{
+    background-color: rgb(193, 102, 205);
+}
+.secondThreeDeckShip{
+    background-color: rgb(166, 205, 102);
+}
+.fourDeckShip{
+    background-color: rgb(234, 238, 27);
+}
+.red{
+    background-color: red;
+}
+.black{
+    background-color: black;
+}
