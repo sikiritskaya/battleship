@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    justify-content: space-between;
 }
 header{
     display: flex;
@@ -117,7 +118,7 @@ header{
     height: 40px;
     border:solid 1px grey;
 }
-/* .twoDeckShip{
+.twoDeckShip{
     background-color: mediumaquamarine;
 }
 .firstThreeDeckShip{
@@ -128,10 +129,46 @@ header{
 }
 .fourDeckShip{
     background-color: rgb(234, 238, 27);
-} */
+}
 .red{
     background-color: red;
 }
 .black{
     background-color: black;
+}
+.er_message{
+    display: none;
+    border-radius: 5px;
+    width: 40%;
+    background-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    margin: -620px auto;
+    z-index: 200;
+        
+}
+span{
+    position: absolute;
+    top:-5px;
+    right: 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+.modal_wrapper{
+    position: absolute;
+    display: none;
+    width: 100%;
+    background-color: rgba(212, 209, 209, 0.5);
+    text-align: center;
+    height: 100vh;
+    z-index: 20;
+    top: 0;
+}
+.show_modal{
+    display: block;
+}
+*{
+    box-sizing: border-box;
 }

@@ -40,15 +40,37 @@ let secondThreeDeckShip = 0
 let fourDeckShip = 0
 function showSquare(squre){
     if(!squre.classList.contains('red') && !squre.classList.contains('black')){
-        if(squre.classList.contains('twoDeckShip')) twoDeckShip++
-        if(squre.classList.contains('firstThreeDeckShip')) firstThreeDeckShip++
-        if(squre.classList.contains('secondThreeDeckShip')) secondThreeDeckShip++
-        if(squre.classList.contains('fourDeckShip')) fourDeckShip++
-        squre.classList.add('red')       
+        if(squre.classList.contains('twoDeckShip')){
+            twoDeckShip++
+            if(twoDeckShip ===2 ){
+                document.querySelectorAll('.twoDeckShip').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        }
+        
+        if(squre.classList.contains('firstThreeDeckShip')){
+            firstThreeDeckShip++
+            if(firstThreeDeckShip === 3 ){
+                document.querySelectorAll('.firstThreeDeckShip').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        } 
+        if(squre.classList.contains('secondThreeDeckShip')){
+            secondThreeDeckShip++
+            if(secondThreeDeckShip === 3 ){
+                document.querySelectorAll('.secondThreeDeckShip').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        } 
+        if(squre.classList.contains('fourDeckShip')){
+            fourDeckShip++
+            if(fourDeckShip === 4 ){
+                document.querySelectorAll('.fourDeckShip').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        } 
+        if(squre.classList.contains('taken')) squre.classList.add('red')   
+        if(!squre.classList.contains('taken')){ 
+            squre.classList.add('black')    
+        }    
     }
-    if(!squre.classList.contains('taken')){ 
-        squre.classList.add('black')    
-    }
+    
     isWinner()
     currentPlayer = 'computer'
     game()
@@ -68,10 +90,30 @@ function compPlay(){
     }) */
     console.log(shot)
     if(!userSquares[shot].classList.contains('red') && !userSquares[shot].classList.contains('black')){
-        if(userSquares[shot].classList.contains('boat')) compTwoDeckShip++
-        if(userSquares[shot].classList.contains('submarine')) compFirstThreeDeckShip++
-        if(userSquares[shot].classList.contains('cruiser')) compSecondThreeDeckShip++
-        if(userSquares[shot].classList.contains('battleship')) compFourDeckShip++
+        if(userSquares[shot].classList.contains('boat')){
+            compTwoDeckShip++
+            if(compTwoDeckShip ===2 ){
+                document.querySelectorAll('.boat').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        }
+        if(userSquares[shot].classList.contains('submarine')){
+            compFirstThreeDeckShip++
+            if(compFirstThreeDeckShip === 3 ){
+                document.querySelectorAll('.submarine').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        } 
+        if(userSquares[shot].classList.contains('cruiser')){
+            compSecondThreeDeckShip++
+            if(compSecondThreeDeckShip === 3 ){
+                document.querySelectorAll('.cruiser').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        } 
+        if(userSquares[shot].classList.contains('battleship')){
+            compFourDeckShip++
+            if(compFourDeckShip === 4 ){
+                document.querySelectorAll('.battleship').forEach(item => item.style.backgroundColor = 'grey')
+            }
+        } 
             //compCounter++
         if(userSquares[shot].classList.contains('taken')) userSquares[shot].classList.add('red')
         if(!userSquares[shot].classList.contains('taken'))userSquares[shot].classList.add('black')
@@ -125,7 +167,14 @@ function isWinner() {
     }
     
 }
-startButton.addEventListener('click', game)
+startButton.addEventListener('click', (e)=>{
+   if(shipContainer.children.length!==0) playerText.textContent = 'put all your ships'
+   if(shipContainer.children.length ===0){
+    playerText.textContent = 0
+    shipContainer.style.display = 'none'
+    game()
+   }
+})
 function end() {
     gameOver = true
     startButton.removeEventListener('click', game)

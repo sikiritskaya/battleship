@@ -8,6 +8,8 @@ const cruiser = document.querySelector('.cruiser_container')
 const battleship = document.querySelector('.battleship_container')
 const rotateButton = document.querySelector('#rotate')
 const width = 10
+const addButton = document.querySelector('#add')
+let modalShow = document.querySelector('.modal_wrapper')
 const userSquares = []
 const compSquares = []
 let isHorizontal = true
@@ -91,6 +93,17 @@ const rotate = () =>{
 
 }
 rotateButton.addEventListener('click',rotate)
+const addPlayer = () => {
+    modalShow.classList.add('show_modal')
+    document.querySelector('.er_message').classList.add('show_modal')
+}
+document.addEventListener('click',(e)=> {
+    if(e.target.closest('span')){
+        modalShow.classList.remove('show_modal')
+        document.querySelector('.er_message').classList.remove('show_modal')
+    }
+})
+addButton.addEventListener('click', addPlayer)
 //let dataset_num = 1
 let draggableShip = null
 let draggableShipLength = null
@@ -122,10 +135,10 @@ function dragLeave(){
     console.log('dragleave')
 }
 function dragDrop(){
-    let shipNameWithLastId = draggableShip.lastElementChild.id
-    let shipClass = shipNameWithLastId.slice(0, -1)
+    let lastShipNameId = draggableShip.lastElementChild.id
+    let shipClass =  lastShipNameId.slice(0, -1)
     console.log(shipClass)
-    let lastShipIndex = parseInt(shipNameWithLastId.substr(-1))
+    let lastShipIndex = parseInt( lastShipNameId.substr(-1))
     let shipLastId = lastShipIndex + parseInt(this.dataset.id)
     console.log(shipLastId)
     selectedShipIndex = parseInt(draggableShipName.substr(-1))
@@ -163,3 +176,52 @@ userSquares.forEach(square=> square.addEventListener('dragenter', dragEnter))
 userSquares.forEach(square=> square.addEventListener('dragleave', dragLeave))
 userSquares.forEach(square=> square.addEventListener('dragend', dragEnd))
 userSquares.forEach(square=> square.addEventListener('drop', dragDrop))
+
+
+const shipsArrayUser=[
+    {
+        name: 'boat',
+        directions:[
+            [0, 1],
+            [0, width]
+        ]
+    },
+    {
+        name: 'submarine',
+        directions:[
+            [0, 1, 2],
+            [0, width, width*2]
+        ]
+    },
+    {
+        name: 'cruiser',
+        directions:[
+            [0, 1, 2],
+            [0, width, width*2]
+        ]
+    },
+    {
+        name: 'battleship',
+        directions:[
+            [0, 1, 2, 3],
+            [0, width, width*2, width*3]
+        ]
+    }
+]
+function generateUserShip(ship) {
+    let randomDirection = Math.floor(Math.random() * ship.directions.length)
+    let current = ship.directions[randomDirection]
+    if (randomDirection === 0) direction = 1
+    if (randomDirection === 1) direction = 10
+    let randomStart = Math.abs(Math.floor(Math.random() * userSquares.length - (ship.directions[0].length * direction)))
+    const isTaken = current.some(index => userSquares[randomStart + index].classList.contains('taken'))
+    if (!isTaken) current.forEach(index => userSquares[randomStart + index].classList.add('taken', ship.name))
+    else generate(ship)
+  }
+  document.querySelector('#random').addEventListener('click', (e)=>{
+    generateUserShip(shipsArrayUser[0])
+    generateUserShip(shipsArrayUser[1])
+    generateUserShip(shipsArrayUser[2])
+    generateUserShip(shipsArrayUser[3])
+    shipContainer.innerHTML=''
+  })
